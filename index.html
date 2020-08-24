@@ -1,0 +1,37 @@
+
+<!--Twitch Boy is a randomizer of twitch-->
+
+<DOCTYPE! html>
+<html>
+    <head>
+        <title>100 Moons</title>
+        
+        
+        <script>
+            /*fetch('https://jsonplaceholder.typicode.com/todos/1')
+            .then(response => response.json())
+            .then(json => console.log(json))*/
+        </script>
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <nav><div class="title">100 M o o n S</div></nav>
+        <!--https://www.w3schools.com/html/html_forms.asp -->
+        <form id="note-submission">
+            Title: <input type="text" id="title" value="Title of Note" required/>
+            <br>
+            Notes: <input type="text" id="note" value="Enter Note" required/>
+            <br>
+            <input id="forms" type="submit" value="Submit"/>
+          </form>
+
+          <div class ="container">
+            <h1>Notes</h1>
+            <div id="notes">
+
+            </div>
+          </div>
+    </body>
+    <script  src="components/base.js"></script>
+</html>
