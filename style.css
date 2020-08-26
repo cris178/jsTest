@@ -28,7 +28,10 @@ nav{
 
 .subNote{
     display: inline-block;
-    height: 5vh;
+    border-style: solid;
+    border-color: white;
+    display: inline-block;
+    padding-bottom: 1vh;
     width: 10vw;
 }
 
@@ -41,4 +44,11 @@ nav{
     font-size: larger;
     border-bottom-style: solid;
     border-color: white;
+}
+
+#note-submission{
+   color: white;
+    width:100vw;
+    display: block;
+    text-align: center;
 }

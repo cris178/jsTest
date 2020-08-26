@@ -22,7 +22,7 @@ form.onsubmit = function (event){
     console.log(title);
     node.appendChild(title);
 
-    //Test of Note Node
+    //Text of Note Node
     var text = document.createElement('div');
     text.classList.add("noteText");
     var textContent = document.createTextNode(form.note.value);
@@ -31,11 +31,31 @@ form.onsubmit = function (event){
     console.log(text);
     node.appendChild(text);
 
-
+    //add node to the dom tree
     console.log("Div created");
     console.log(node);
     document.getElementById("notes").appendChild(node);
     
+    console.log("Saving to Browser");
+    //push a copy of the note and save to browser
+        let noteJson ={
+            title: form.title.value,
+            note: form.note.value
+        }
+        console.log("Currently stored content....");
+        console.log(localStorage.getItem('NotesSaved'));
+        //If no notes saved create the object and save it to the list, else just push to saved list of notes
+        if(localStorage.getItem('NotesSaved') === null){
+            var NotesSaved = [];
+            NotesSaved.push(noteJson);
+            localStorage.setItem('NotesSaved',JSON.stringify(NotesSaved));
+        }else{
+            var NotesSaved = JSON.parse(localStorage.getItem('NotesSaved'));
+            NotesSaved.push(noteJson);
+            localStorage.setItem('NotesSaved', JSON.stringify(NotesSaved));
+        }
+        console.log('Content Stored after push');
+        console.log(noteJson);
 }
 
 //Our base JS Object will link to a stylesheet
